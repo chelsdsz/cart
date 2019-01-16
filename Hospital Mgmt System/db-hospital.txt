@@ -1,0 +1,83 @@
+-- phpMyAdmin SQL Dump
+-- version 3.2.0.1
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Jun 02, 2016 at 01:30 PM
+-- Server version: 5.1.36
+-- PHP Version: 5.3.0
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+--
+-- Database: `hospital`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `books_appt`
+--
+
+CREATE TABLE IF NOT EXISTS `books_appt` (
+  `patient_id` int(11) NOT NULL,
+  `doctor_id` int(11) NOT NULL,
+  `date` text NOT NULL,
+  `time` text NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `books_appt`
+--
+
+INSERT INTO `books_appt` (`patient_id`, `doctor_id`, `date`, `time`) VALUES
+(1, 1, 'Apr 20, 2016', 'slot1'),
+(6, 1, 'May 24, 2016', 'slot2'),
+(4, 1, 'May 10, 2016', 'slot2'),
+(5, 1, 'May 24, 2016', 'slot1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `doctor`
+--
+
+CREATE TABLE IF NOT EXISTS `doctor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `dname` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `doctor`
+--
+
+INSERT INTO `doctor` (`id`, `dname`) VALUES
+(1, 'Richard Smith'),
+(2, 'Venugopal Rao');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `patient`
+--
+
+CREATE TABLE IF NOT EXISTS `patient` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` text NOT NULL,
+  `email` text NOT NULL,
+  `address` text NOT NULL,
+  `contact` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
+
+--
+-- Dumping data for table `patient`
+--
+
+INSERT INTO `patient` (`id`, `name`, `email`, `address`, `contact`) VALUES
+(4, 'robert Keynes', 'rob@live.com', '101 helmsley Road', '2136589746'),
+(2, 'jack fuller', 'j.fuller@gmail.com', '10 cromfed Road BlueBerry', '0675987234'),
+(3, 'Emma Fuller', 'emma@yahoo.com', '10 Kingston Road Hounslow', '23409898234'),
+(5, 'allan', 'green', '102 osborn lane greenwich ', '0445679832'),
+(6, 'allan green', 'allan@gmail.com', '101 kingston lane Thames Greenwich', '04456934512');
